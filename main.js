@@ -1,31 +1,57 @@
-function getComputerChoices() {
-    const paper = 1;
-    const rock = 2;
-    const scissors = 3;
+function computerSelection() {
     let result = Math.floor(Math.random() * 3) + 1;
     switch(result) {
         case 1:
-            return 'Paper';
+            return result = paper;
         case 2:
-            return 'Rock';
+            return result = rock;
         case 3:
-            return 'Scissors';
+            return result = scissors;
     }
+    return result;
 }
 
-// 
+// Variables
 
-let playerSelection = prompt('What is your move?', '');
-const paper = 1;
-const rock = 2;
-const scissors = 3;
-if (playerSelection.charAt(0) == 'p' || playerSelection.charAt(0) == 'P') {
-    playerSelection = paper;
-} else if (playerSelection.charAt(0) == 'r' || playerSelection.charAt(0) == 'R') {
-    playerSelection = rock;
-} else if (playerSelection.charAt(0) == 's' || playerSelection.charAt(0) == 'S') {
-    playerSelection = scissors;
+let playerChoice = prompt('What is your move?', '');
+const paper = 'paper';
+const rock = 'rock';
+const scissors = 'scissors';
+let player = playerSelection();
+let computer = computerSelection();
+
+
+function playerSelection(){
+if (playerChoice.charAt(0) === 'p' || playerChoice.charAt(0) === 'P') {
+    return playerChoice = paper;
+} else if (playerChoice.charAt(0) === 'r' || playerChoice.charAt(0) === 'R') {
+    return playerChoice = rock;
+} else if (playerChoice.charAt(0) === 's' || playerChoice.charAt(0) === 'S') {
+    return playerChoice = scissors;
+}
 }
 
-console.log(playerSelection);
+function singleRound(player, computer) {
+    let result;
+    if (player === computer){
+        return result = "Tie"
+    } else if (player === 'paper' && computer === 'rock') {
+        return result = 'You Win'
+    } else if (player === 'scissors' && computer === 'paper') {
+        return result = 'You Win';
+    } else if (player === 'rock' && computer === 'scissors') {
+        return result = 'You Win'
+    } else {
+        return result = 'You lose'
+    }
+
+}
+
+console.log(playerSelection());
+console.log(computer);
+console.log(singleRound(player, computer));
+
+
+
+
 
